@@ -1,0 +1,118 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .calendar-container {
+    width: 700px; /* Increased container width */
+    padding: 32px; /* Increased padding */
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px; /* Increased margin */
+  }
+  .header button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 16px; /* Increased button size */
+    border-radius: 8px;
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .header button:hover {
+    background-color: #357ab8;
+  }
+  .header h2 {
+    margin: 0;
+    font-size: 2rem; /* Increased font size */
+    color: #333;
+  }
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px; /* Increased gap between cells */
+  }
+  .day {
+    width: 90px; /* Increased day cell size */
+    height: 120px; /* Increased height for multiple events */
+    position: relative;
+    background-color: #f4f7f6;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column; /* Stack events vertically */
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    overflow: hidden; /* Prevent overflow of too many events */
+  }
+  .day:hover {
+    background-color: #e2f0fe;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  .day .date {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold;
+    color: #333;
+  }
+  .day .event-title {
+    font-size: 1rem; /* Increased font size */
+    color: #4a4a4a;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: left;
+    width: 100%; /* Make event titles take full width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; /* Stack titles on top of each other */
+  }
+  .day .event-details {
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    font-size: 0.9rem; /* Increased font size */
+    color: #444;
+    z-index: 10;
+  }
+  .day:hover .event-details {
+    display: block;
+  }
+  .clear-btn {
+    width: 100%;
+    padding: 16px; /* Increased button size */
+    background-color: #ff6666;
+    border: none;
+    color: white;
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+  }
+  .clear-btn:hover {
+    background-color: #e65050;
+  }
+  
